@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encomendas de Lettering</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Encomendas de Lettering</h1>
+        <div class="d-flex flex-wrap justify-content-center mb-4">
+            <button class="btn btn-primary m-2" onclick="showSection('cadastroCliente')">Cadastrar Cliente</button>
+            <button class="btn btn-primary m-2" onclick="showSection('cadastroEncomenda')">Cadastrar Encomenda</button>
+            <button class="btn btn-primary m-2" onclick="showSection('calcularValor')">Calcular Valor da Placa</button>
+            <button class="btn btn-primary m-2" onclick="showSection('calcularPrazo')">Calcular Prazo de Entrega</button>
+        </div>
+        <div id="cadastroCliente" class="section">
+            <h2 class="text-center">Cadastrar Cliente</h2>
+            <div class="form-group">
+                <label for="nomeCliente">Nome:</label>
+                <input type="text" class="form-control" id="nomeCliente">
+            </div>
+            <div class="form-group">
+                <label for="telefoneCliente">Telefone:</label>
+                <input type="text" class="form-control" id="telefoneCliente">
+            </div>
+            <button class="btn btn-success" onclick="cadastrarCliente()">Cadastrar</button>
+        </div>
+        <div id="cadastroEncomenda" class="section">
+            <h2 class="text-center">Cadastrar Encomenda</h2>
+            <div class="form-group">
+                <label for="clienteIndex">Número do Cliente:</label>
+                <input type="number" class="form-control" id="clienteIndex">
+            </div>
+            <div class="form-group">
+                <label for="altura">Altura:</label>
+                <input type="number" class="form-control" id="altura">
+            </div>
+            <div class="form-group">
+                <label for="largura">Largura:</label>
+                <input type="number" class="form-control" id="largura">
+            </div>
+            <div class="form-group">
+                <label for="frase">Frase:</label>
+                <input type="text" class="form-control" id="frase">
+            </div>
+            <div class="form-group">
+                <label for="corSuperficie">Cor da Superfície:</label>
+                <input type="text" class="form-control" id="corSuperficie">
+            </div>
+            <div class="form-group">
+                <label for="corTexto">Cor do Texto:</label>
+                <input type="text" class="form-control" id="corTexto">
+            </div>
+            <div class="form-group">
+                <label for="dataEntrega">Data de Entrega:</label>
+                <input type="date" class="form-control" id="dataEntrega">
+            </div>
+            <div class="form-group">
+                <label for="valorServico">Valor do Serviço:</label>
+                <input type="number" class="form-control" id="valorServico">
+            </div>
+            <div class="form-group">
+                <label for="valorSinal">Valor do Sinal:</label>
+                <input type="number" class="form-control" id="valorSinal">
+            </div>
+            <button class="btn btn-success" onclick="cadastrarEncomenda()">Cadastrar</button>
+        </div>
+        <div id="calcularValor" class="section">
+            <h2 class="text-center">Calcular Valor da Placa</h2>
+            <div class="form-group">
+                <label for="calcAltura">Altura:</label>
+                <input type="number" class="form-control" id="calcAltura">
+            </div>
+            <div class="form-group">
+                <label for="calcLargura">Largura:</label>
+                <input type="number" class="form-control" id="calcLargura">
+            </div>
+            <div class="form-group">
+                <label for="calcFrase">Frase:</label>
+                <input type="text" class="form-control" id="calcFrase">
+            </div>
+            <button class="btn btn-success" onclick="calcularValorPlaca()">Calcular</button>
+            <p id="valorPlaca"></p>
+        </div>
+        <div id="calcularPrazo" class="section">
+            <h2 class="text-center">Calcular Prazo de Entrega</h2>
+            <button class="btn btn-success" onclick="calcularPrazoEntrega()">Calcular Prazo</button>
+            <p id="prazoEntrega"></p>
+        </div>
+        <div id="canvasSection" class="section">
+            <h2 class="text-center">Visualizar Placa</h2>
+            <canvas id="canvas" class="mx-auto d-block border" width="400" height="200"></canvas>
+            <button class="btn btn-success mt-3" onclick="desenharPlaca()">Desenhar Placa</button>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
